@@ -98,11 +98,11 @@
 
     .subtitle{ margin-top:8px; color:var(--muted); font-size:14px; }
     .cta{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
-    .btn{ padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; border:1px solid transparent; background: linear-gradient(90deg,var(--accent-blue),var(--accent-purple)); color:white; cursor:pointer; transition: transform 200ms ease, box-shadow 200ms ease; display:inline-flex; gap:8px; align-items:center; }
+    .btn{ padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; border:1px solid transparent; background: linear-gradient(90deg,var(--accent-blue),var(--accent-purple)); color:white; cursor:pointer; transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms; }
     .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--text); }
     .btn:hover{ transform: translateY(-6px) scale(1.02); box-shadow: var(--neon-glow); }
 
-    .hero-right{ width:260px; min-width:220px; border-radius:12px; padding:14px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008)); box-shadow: var(--card-shadow); display:flex; flex-direction:column; gap:8px; align-items:flex-start; transition:transform 240ms ease; will-change:transform; }
+    .hero-right{ width:260px; min-width:220px; border-radius:12px; padding:14px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008)); box-shadow: var(--card-shadow); display:grid; gap:10px; transition: transform 260ms cubic-bezier(.2,.9,.2,1); }
     .hero-right:hover{ transform: translateY(-6px) }
     .stat{ font-size:20px; font-weight:800; color:var(--text); }
     .stat-sub{ color:var(--muted); font-size:13px; }
@@ -118,14 +118,15 @@
     .about-text{ color:var(--muted); line-height:1.5; font-size:15px; }
 
     .fancy-heading{ display:inline-block; position:relative; padding-bottom:10px; }
-    .fancy-heading::after{ content: ""; position:absolute; left:0; bottom:0; height:6px; width:100%; background: linear-gradient(90deg,var(--accent-purple),var(--accent-blue),var(--accent-cyan)); border-radius:999px; transform: scaleX(0); transform-origin: left center; transition: transform 720ms cubic-bezier(.2,.9,.2,1); box-shadow: 0 8px 28px rgba(139,92,246,0.10); opacity:0.95; }
+    .fancy-heading::after{ content: ""; position:absolute; left:0; bottom:0; height:6px; width:100%; background: linear-gradient(90deg,var(--accent-purple),var(--accent-blue),var(--accent-cyan)); border-radius:999px; transform: scaleX(0); transform-origin: left; transition: transform 560ms cubic-bezier(.2,.9,.2,1); }
     .section-panel.in-view .fancy-heading::after{ transform: scaleX(1); }
 
     .fancy-sub{ display:inline-block; margin-top:10px; color:var(--muted); position:relative; transition: transform 560ms cubic-bezier(.2,.9,.2,1), opacity 560ms; transform: translateY(8px); opacity:0; }
     .section-panel.in-view .fancy-sub{ transform:none; opacity:1; }
 
     .likes{ margin-top:12px; display:flex; gap:12px; flex-wrap:wrap; }
-    .like-item{ --i:0; padding:12px 14px; background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.006)); border-radius:12px; border:1px solid rgba(255,255,255,0.02); min-width:140px; display:flex; gap:10px; align-items:center; color:var(--muted); font-weight:700; cursor:default; transform: translateY(14px); opacity:0; transition: transform 560ms cubic-bezier(.2,.9,.2,1), opacity 560ms, box-shadow 260ms ease, border-color 260ms ease; transition-delay: calc(var(--i) * 110ms); }
+    .like-item{ --i:0; padding:12px 14px; background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.006)); border-radius:12px; border:1px solid rgba(255,255,255,0.02); min-width:120px; display:flex; align-items:center; gap:8px; transition: transform 560ms cubic-bezier(.2,.9,.2,1), opacity 560ms, box-shadow 260ms; transform: translateY(8px); opacity:0; }
+    .like-item{ transition-delay: calc(var(--i) * 80ms); }
     .likes.likes-in .like-item{ transform:none; opacity:1; }
     .like-item:hover{ transform: translateY(-6px) scale(1.02); box-shadow: 0 22px 54px rgba(139,92,246,0.08); border-color: rgba(139,92,246,0.14); color:var(--text); }
     .like-icon{ width:36px;height:36px;border-radius:8px;display:grid;place-items:center;color:white;font-weight:700; background: linear-gradient(135deg,var(--accent-purple),var(--accent-blue)); flex-shrink:0; }
@@ -139,7 +140,7 @@
 
     /* PROJECTS */
     .projects-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin-top:40px; }
-    .project{ padding:12px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border:1px solid rgba(255,255,255,0.02); transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, border-color 260ms ease; cursor:pointer; will-change:transform; display:flex; flex-direction:column; gap:10px; }
+    .project{ padding:12px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border:1px solid rgba(255,255,255,0.02); transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms; cursor:pointer; }
     .project:hover{ transform: translateY(-10px) scale(1.02); box-shadow: 0 28px 70px rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.16); }
     .thumb{ border-radius:10px; overflow:hidden; height:160px; background:#0a0a12; display:block; }
     .thumb svg{ width:100%; height:100%; display:block; }
@@ -149,9 +150,106 @@
     .tech-pill{ font-size:12px; padding:6px 8px; border-radius:8px; background: rgba(255,255,255,0.02); color:var(--muted); font-weight:700; }
 
     .project-actions{ display:flex; gap:8px; margin-top:10px; }
-    .project-actions .btn-small{ padding:8px 10px; border-radius:8px; font-weight:700; font-size:13px; text-decoration:none; border:1px solid rgba(255,255,255,0.04); color:var(--text); background:transparent; cursor:pointer; }
+    .project-actions .btn-small{ padding:8px 10px; border-radius:8px; font-weight:700; font-size:13px; text-decoration:none; border:1px solid rgba(255,255,255,0.04); color:var(--text); background:transparent; cursor:pointer; transition: transform 260ms, box-shadow 260ms; }
     .project-actions .btn-small.primary{ background: linear-gradient(90deg,var(--accent-blue),var(--accent-purple)); color:white; border: none; }
     .project-actions .btn-small:hover{ transform: translateY(-4px); }
+
+    /* PASSWORD MODAL */
+    .password-modal{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 4, 11, 0.85);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .password-modal.active{
+      display: flex;
+    }
+    .password-modal-content{
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(139,92,246,0.15);
+      border: 1px solid rgba(255,255,255,0.06);
+      animation: slideUp 400ms cubic-bezier(.2,.9,.2,1);
+    }
+    @keyframes slideUp{
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .password-modal h2{
+      margin: 0 0 12px 0;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .password-modal p{
+      margin: 0 0 20px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .password-input{
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 14px;
+      font-family: "JetBrains Mono", monospace;
+      margin-bottom: 14px;
+      transition: border-color 260ms;
+    }
+    .password-input:focus{
+      outline: none;
+      border-color: rgba(139,92,246,0.4);
+      background: rgba(139,92,246,0.05);
+    }
+    .password-input.error{
+      border-color: rgba(255,100,100,0.4);
+      background: rgba(255,100,100,0.05);
+    }
+    .password-error{
+      color: #ff6464;
+      font-size: 12px;
+      margin-bottom: 12px;
+      display: none;
+    }
+    .password-error.show{
+      display: block;
+    }
+    .password-actions{
+      display: flex;
+      gap: 10px;
+    }
+    .password-actions .btn{
+      flex: 1;
+    }
+    .projects-locked{
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+    .projects-locked-icon{
+      font-size: 48px;
+      margin-bottom: 12px;
+      opacity: 0.6;
+    }
+    .projects-locked p{
+      margin: 0 0 20px 0;
+      font-size: 14px;
+    }
+    .projects-locked .btn{
+      display: inline-block;
+    }
 
     /* CONTACT & FOOTER */
     .contact-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
@@ -159,7 +257,7 @@
     .copy-btn{ padding:10px 12px; border-radius:10px; background: linear-gradient(90deg,var(--accent-purple),var(--accent-cyan)); color:white; border:none; cursor:pointer; }
     footer{ margin-top:18px; text-align:center; color:var(--muted); font-size:13px; padding:10px 0; }
 
-    /* SIDEBAR PROFILE PHOTO (replace the square DV with your image) */
+    /* SIDEBAR PROFILE PHOTO */
     .profile-avatar{
       width:84px;
       height:84px;
@@ -182,6 +280,7 @@
       .projects-grid{ margin-top:24px; }
       .thumb{ height:140px; }
       .profile-avatar{ width:72px; height:72px; }
+      .password-modal-content{ padding: 24px; }
     }
   </style>
 </head>
@@ -257,9 +356,15 @@
       <!-- PROJECTS -->
       <section class="section-panel reveal fade-up" id="projects">
         <h2>Projects</h2>
-       
+        <p id="projectsNote" class="small" style="margin-top:6px;color:var(--accent-cyan)">🔒 Protected - Click "View Projects" to unlock</p>
 
-        <div class="projects-grid" id="projectsGrid">
+        <div id="projectsLockedView" class="projects-locked">
+          <div class="projects-locked-icon">🔐</div>
+          <p>Projects are password protected</p>
+          <button class="btn" id="unlockProjectsBtn">Unlock Projects</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid" style="display:none;">
           <!-- E-COMMERCE -->
           <article class="project" data-demo="https://example.com/ecommerce-demo" data-source="https://github.com/username/ecommerce" tabindex="0" aria-label="E-Commerce Project">
             <figure class="thumb" aria-hidden="true">
@@ -352,7 +457,6 @@
       <footer class="panel reveal fade-up" style="margin-top:18px;">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
           <div class="small">© <span id="year"></span> Divyrajsinh Paredi</div>
-          
         </div>
       </footer>
     </main>
@@ -360,8 +464,6 @@
     <!-- SIDEBAR -->
     <aside class="panel reveal fade-right">
       <div style="display:flex;gap:12px;align-items:center;">
-        <!-- REPLACED initials box with profile image -->
-        <!-- Replace the `src` value with the URL of your photo (square recommended). -->
         <img src="https://via.placeholder.com/300.png?text=Your+Photo" alt="Divyrajsinh Paredi" class="profile-avatar" id="profileAvatar">
         <div>
           <div style="font-weight:800">Divyrajsinh Paredi</div>
@@ -370,7 +472,7 @@
       </div>
 
       <div style="margin-top:12px">
-        <div class="small">Location:Junagadh Gujrat </div>
+        <div class="small">Location: Junagadh, Gujarat</div>
         <div class="small" style="margin-top:6px">Availability: Open to remote</div>
       </div>
 
@@ -378,9 +480,7 @@
         <div class="small" style="margin-bottom:8px">Social</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
           <a class="btn ghost" href="https://github.com/divyrajsinh20" aria-label="GitHub">GitHub</a>
-          <a class="btn ghost" href="https://www.instagram.com/divyrajainh_paredi
-" aria-label="LinkedIn">Instagram</a>
-          
+          <a class="btn ghost" href="https://www.instagram.com/divyrajainh_paredi" aria-label="Instagram">Instagram</a>
         </div>
       </div>
 
@@ -390,14 +490,26 @@
     </aside>
   </div>
 
+  <!-- PASSWORD MODAL -->
+  <div class="password-modal" id="passwordModal">
+    <div class="password-modal-content">
+      <h2>🔐 Unlock Projects</h2>
+      <p>Enter the password to view my projects</p>
+      <input type="password" id="passwordInput" class="password-input" placeholder="Enter password" />
+      <div class="password-error" id="passwordError">Incorrect password</div>
+      <div class="password-actions">
+        <button class="btn" id="submitPasswordBtn">Unlock</button>
+        <button class="btn ghost" id="closeModalBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     /********************************************************
-     * Name typing + neon glow animation
-     * - starts when hero section reveals
-     * - reveal animations (IntersectionObserver)
-     * - project tilt effect (disabled on touch)
-     * - Live Demo and Source links added to cards and buttons
-     * - Profile photo in sidebar (replace src to your real photo)
+     * Password Protected Projects Feature
+     * - Modal-based password authentication
+     * - LocalStorage-based session management
+     * - Smooth unlock animation
      ********************************************************/
     (function () {
       const yearEl = document.getElementById('year');
@@ -408,6 +520,93 @@
       const resumeLink = document.getElementById('resumeLink');
       const likesContainer = document.getElementById('likesList');
       const skillsSection = document.getElementById('skills');
+      
+      // Password protection elements
+      const passwordModal = document.getElementById('passwordModal');
+      const passwordInput = document.getElementById('passwordInput');
+      const submitPasswordBtn = document.getElementById('submitPasswordBtn');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const passwordError = document.getElementById('passwordError');
+      const unlockProjectsBtn = document.getElementById('unlockProjectsBtn');
+      const projectsGrid = document.getElementById('projectsGrid');
+      const projectsLockedView = document.getElementById('projectsLockedView');
+
+      // Set correct password here
+      const CORRECT_PASSWORD = 'divyrajsinh2024';
+      
+      // Check if projects are already unlocked
+      const isProjectsUnlocked = () => sessionStorage.getItem('projectsUnlocked') === 'true';
+
+      // Unlock projects
+      const unlockProjects = () => {
+        sessionStorage.setItem('projectsUnlocked', 'true');
+        projectsLockedView.style.display = 'none';
+        projectsGrid.style.display = 'grid';
+        passwordModal.classList.remove('active');
+        passwordInput.value = '';
+        passwordError.classList.remove('show');
+        animateProjectsCount();
+      };
+
+      // Show password modal
+      const showPasswordModal = () => {
+        passwordModal.classList.add('active');
+        setTimeout(() => passwordInput.focus(), 100);
+      };
+
+      // Hide password modal
+      const hidePasswordModal = () => {
+        passwordModal.classList.remove('active');
+        passwordInput.value = '';
+        passwordError.classList.remove('show');
+        passwordInput.classList.remove('error');
+      };
+
+      // Verify password
+      const verifyPassword = () => {
+        const input = passwordInput.value;
+        if (input === CORRECT_PASSWORD) {
+          unlockProjects();
+        } else {
+          passwordError.classList.add('show');
+          passwordInput.classList.add('error');
+          setTimeout(() => {
+            passwordInput.classList.remove('error');
+            passwordError.classList.remove('show');
+          }, 2000);
+        }
+      };
+
+      // Initialize projects section
+      const initProjectsSection = () => {
+        if (isProjectsUnlocked()) {
+          projectsLockedView.style.display = 'none';
+          projectsGrid.style.display = 'grid';
+        } else {
+          projectsLockedView.style.display = 'block';
+          projectsGrid.style.display = 'none';
+        }
+      };
+
+      // Event listeners for password modal
+      unlockProjectsBtn.addEventListener('click', showPasswordModal);
+      closeModalBtn.addEventListener('click', hidePasswordModal);
+      submitPasswordBtn.addEventListener('click', verifyPassword);
+      passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') verifyPassword();
+      });
+
+      // Close modal on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && passwordModal.classList.contains('active')) {
+          hidePasswordModal();
+        }
+      });
+
+      // Close modal on backdrop click
+      passwordModal.addEventListener('click', (e) => {
+        if (e.target === passwordModal) hidePasswordModal();
+      });
 
       // Name typing
       const nameTextEl = document.getElementById('nameText');
@@ -428,7 +627,9 @@
           if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
             if (entry.target.id === 'skills') animateSkills();
-            if (entry.target.id === 'projects') animateProjectsCount();
+            if (entry.target.id === 'projects') {
+              if (isProjectsUnlocked()) animateProjectsCount();
+            }
             if (entry.target.id === 'about') animateAbout();
             if (entry.target.id === 'hero') animateName();
             obs.unobserve(entry.target);
@@ -440,7 +641,6 @@
         if (revealObserver) revealObserver.observe(node);
         else {
           node.classList.add('in-view');
-          // If no observer, trigger directly
           if (node.id === 'skills') animateSkills();
           if (node.id === 'hero') animateName();
         }
@@ -473,16 +673,13 @@
         }, speed);
       }
 
-      // Animate about likes
       function animateAbout() { if (!likesContainer) return; likesContainer.classList.add('likes-in'); }
 
-      // Skills bars animation (robust)
       function animateSkills() {
         if (skillsAnimated) return;
         skillsAnimated = true;
         const bars = document.querySelectorAll('.progress > i');
         bars.forEach((bar, idx) => {
-          // use getAttribute for robustness
           const raw = bar.getAttribute('data-target') || bar.getAttribute('data') || '70';
           const target = Math.max(0, Math.min(100, parseInt(raw.replace('%',''), 10) || 0));
           setTimeout(() => {
@@ -491,23 +688,20 @@
         });
       }
 
-      // If skills section already visible on load, animate immediately
       function isElementVisible(el) {
         if (!el) return false;
         const rect = el.getBoundingClientRect();
         return rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0;
       }
+
       if (!('IntersectionObserver' in window) || reduceMotion) {
-        // If observer not supported or reduced motion, run skills animation immediately
         animateSkills();
       } else {
-        // If skills is already in view on load, animate
         window.addEventListener('load', () => {
           if (isElementVisible(skillsSection)) animateSkills();
         });
       }
 
-      // Projects count
       function animateProjectsCount(){
         const projectsCountEl = document.getElementById('projectsCount');
         const total = document.querySelectorAll('.project').length;
@@ -521,7 +715,7 @@
         }, 70);
       }
 
-      // Project interactions: click handlers, tilt (desktop)
+      // Project interactions
       const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       if (!isTouch && !reduceMotion) {
         projectCards.forEach(card => {
@@ -546,15 +740,13 @@
 
           card.addEventListener('pointermove', onMove);
           card.addEventListener('pointerleave', onLeave);
-
-          // clicking card opens demo (unless clicked a link)
           card.addEventListener('click', (e) => { if (e.target.closest('a')) return; const demo = card.getAttribute('data-demo'); if (demo && demo !== '#') window.open(demo, '_blank'); });
         });
       } else {
         projectCards.forEach(card => { card.addEventListener('click', () => { const demo = card.getAttribute('data-demo'); if (demo && demo !== '#') window.open(demo, '_blank'); }); });
       }
 
-      // Demo contact send
+      // Contact form
       sendBtn && sendBtn.addEventListener('click', ()=> {
         const name = (document.getElementById('name')||{}).value || '';
         const email = (document.getElementById('email')||{}).value || '';
@@ -574,8 +766,11 @@
         else alert('Resume not linked. Update the resume link (id="resumeLink") href to your CV file.');
       });
 
-      // Ensure name animation if hero already visible
-      window.addEventListener('load', ()=> { if ((!('IntersectionObserver' in window) || reduceMotion) && !nameAnimated) animateName(); });
+      // Initialize
+      window.addEventListener('load', ()=> { 
+        initProjectsSection();
+        if ((!('IntersectionObserver' in window) || reduceMotion) && !nameAnimated) animateName(); 
+      });
 
     })();
   </script>
